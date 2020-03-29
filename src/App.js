@@ -1,30 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { makeStyles } from "@material-ui/core/styles";
+import MuiAlert from "@material-ui/lab/Alert";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import Snackbar from "@material-ui/core/Snackbar";
 
 import CrawlerSpanDropdown from "./components/crawler_span_dropdown";
 import TweetCrawlerBrothers from "./components/tweet_crawler_brothers";
 import { fetchTweets } from "./service/twitter";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: "left",
-    backgroundColor: "transparent !important",
-    color: "#ffffff"
-  }
-}));
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 function App() {
   const [tweets, setTweets] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [timer, setTimer] = useState(0);
   const [watch, setWatch] = useState("");
   const [span, setSpan] = useState(6000);
@@ -34,17 +28,32 @@ function App() {
     if (!searchText) return;
     if (timer > 0) {
       fetchTweets(searchText, password).then(json => {
+        if (json.error)
+          return setError("認証エラーです。パスワードを確認してください。");
         setTweets([json[0]]);
       });
+
       setWatch(
         setInterval(() => {
           fetchTweets(searchText, password).then(json => {
+            if (json.error)
+              return setError("認証エラーです。パスワードを確認してください。");
             setTweets([json[0]]);
           });
         }, span)
       );
     }
   }, [timer]);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setError("");
+    setTimer(0);
+    clearInterval(watch);
+  };
 
   return (
     <div className="App">
@@ -171,6 +180,12 @@ function App() {
           <CrawlerSpanDropdown spanList={spanList} setSpan={setSpan} />
         )}
       </header>
+
+      <Snackbar open={!!error} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          {error}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
