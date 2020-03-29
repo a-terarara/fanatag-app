@@ -82,9 +82,14 @@ function App() {
                 <Grid item xs={1} style={{ textAlign: "center" }}>
                   <i className="fa fa-twitter"></i>
                 </Grid>
-                <Grid item xs={6} />
                 <Grid item xs={5}>
-                  <Typography noWrap style={{ fontSize: "80%" }}>
+                  <Typography
+                    noWrap
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "100%"
+                    }}
+                  >
                     {searchText}
                   </Typography>
                 </Grid>
