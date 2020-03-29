@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
 function App() {
   const [tweets, setTweets] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [password, setPassword] = useState("");
   const [timer, setTimer] = useState(0);
   const [watch, setWatch] = useState("");
   const [span, setSpan] = useState(6000);
@@ -32,12 +33,12 @@ function App() {
   useEffect(() => {
     if (!searchText) return;
     if (timer > 0) {
-      fetchTweets(searchText).then(json => {
+      fetchTweets(searchText, password).then(json => {
         setTweets([json[0]]);
       });
       setWatch(
         setInterval(() => {
-          fetchTweets(searchText).then(json => {
+          fetchTweets(searchText, password).then(json => {
             setTweets([json[0]]);
           });
         }, span)
@@ -134,15 +135,15 @@ function App() {
         <br />
         <br />
         <TweetCrawlerBrothers
-          searchText={searchText}
+          searchText={searchText + password}
           setTimer={setTimer}
           watch={watch}
         />
-
         <br />
         <br />
         <TextField
           id="filled-basic"
+          component="span"
           style={{ backgroundColor: "#ffffff" }}
           label="クロールしたい文字列"
           variant="filled"
@@ -152,6 +153,18 @@ function App() {
         />
         <br />
 
+        <TextField
+          id="filled-password-input"
+          style={{ backgroundColor: "#ffffff" }}
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          variant="filled"
+          value={password}
+          disabled={timer > 0}
+          onChange={e => setPassword(e.target.value)}
+        />
+        <br />
         {timer > 0 ? (
           ""
         ) : (
