@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/fanatag-app/static/css/main.9f0dbf7c.chunk.css",
-    "main.js": "/fanatag-app/static/js/main.7b84894c.chunk.js",
-    "main.js.map": "/fanatag-app/static/js/main.7b84894c.chunk.js.map",
+    "main.js": "/fanatag-app/static/js/main.c54f17d4.chunk.js",
+    "main.js.map": "/fanatag-app/static/js/main.c54f17d4.chunk.js.map",
     "runtime-main.js": "/fanatag-app/static/js/runtime-main.bd30e6b7.js",
     "runtime-main.js.map": "/fanatag-app/static/js/runtime-main.bd30e6b7.js.map",
-    "static/js/2.63120664.chunk.js": "/fanatag-app/static/js/2.63120664.chunk.js",
-    "static/js/2.63120664.chunk.js.map": "/fanatag-app/static/js/2.63120664.chunk.js.map",
+    "static/js/2.ff75d6ae.chunk.js": "/fanatag-app/static/js/2.ff75d6ae.chunk.js",
+    "static/js/2.ff75d6ae.chunk.js.map": "/fanatag-app/static/js/2.ff75d6ae.chunk.js.map",
     "index.html": "/fanatag-app/index.html",
-    "precache-manifest.cff65fb3fc7bdb3ab8774117bc9f2138.js": "/fanatag-app/precache-manifest.cff65fb3fc7bdb3ab8774117bc9f2138.js",
+    "precache-manifest.320e8ed9bf3a7a584e81187247501e37.js": "/fanatag-app/precache-manifest.320e8ed9bf3a7a584e81187247501e37.js",
     "service-worker.js": "/fanatag-app/service-worker.js",
     "static/css/main.9f0dbf7c.chunk.css.map": "/fanatag-app/static/css/main.9f0dbf7c.chunk.css.map",
-    "static/js/2.63120664.chunk.js.LICENSE.txt": "/fanatag-app/static/js/2.63120664.chunk.js.LICENSE.txt"
+    "static/js/2.ff75d6ae.chunk.js.LICENSE.txt": "/fanatag-app/static/js/2.ff75d6ae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bd30e6b7.js",
-    "static/js/2.63120664.chunk.js",
+    "static/js/2.ff75d6ae.chunk.js",
     "static/css/main.9f0dbf7c.chunk.css",
-    "static/js/main.7b84894c.chunk.js"
+    "static/js/main.c54f17d4.chunk.js"
   ]
 }
