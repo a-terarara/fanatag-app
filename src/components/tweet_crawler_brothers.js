@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function TweetCrawlerBrothers(props) {
-  const { setTimer, watch } = props;
+  const { searchText, setTimer, watch } = props;
   return (
     <table>
       <tbody>
@@ -10,7 +10,7 @@ export default function TweetCrawlerBrothers(props) {
             <button
               className="btn-social-long-twitter"
               onClick={() => {
-                setTimer(1);
+                if (searchText) setTimer(1);
               }}
             >
               <i className="fa fa-twitter"></i> <span>ツイート取得</span>
