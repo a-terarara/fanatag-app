@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fanatag-app/precache-manifest.e6af1ba687f2d9b54aeb242d08811552.js"
+  "/fanatag-app/precache-manifest.75f2a9dc7d601b390cd954e92d64f33a.js"
 );
 
 self.addEventListener('message', (event) => {
