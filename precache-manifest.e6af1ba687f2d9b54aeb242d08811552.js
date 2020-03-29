@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "817dfc79e87b7178ae0e9dd67a99032d",
+    "revision": "b5bad7836ed1d1ad16f7fd0edf3635a2",
     "url": "/fanatag-app/index.html"
   },
   {
-    "revision": "2c550ba71ad628851815",
+    "revision": "8c83f87505de36fbb6c7",
     "url": "/fanatag-app/static/css/main.9f0dbf7c.chunk.css"
   },
   {
-    "revision": "f45add31c5dd9c8e7ad4",
-    "url": "/fanatag-app/static/js/2.ff75d6ae.chunk.js"
+    "revision": "a11b73dc86bb4ffefc56",
+    "url": "/fanatag-app/static/js/2.dbac10e5.chunk.js"
   },
   {
     "revision": "d466ab9648f013dea081956fc7c904f3",
-    "url": "/fanatag-app/static/js/2.ff75d6ae.chunk.js.LICENSE.txt"
+    "url": "/fanatag-app/static/js/2.dbac10e5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2c550ba71ad628851815",
-    "url": "/fanatag-app/static/js/main.c54f17d4.chunk.js"
+    "revision": "8c83f87505de36fbb6c7",
+    "url": "/fanatag-app/static/js/main.9be40cb9.chunk.js"
   },
   {
     "revision": "b9e7aac922c4bebfa691",
