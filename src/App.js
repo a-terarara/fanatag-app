@@ -58,6 +58,101 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+      {tweets.length > 0 ? (
+          <div
+            style={{
+              backgroundColor: "#1da1f3",
+              height: "85px",
+              width: "500px"
+            }}
+          >
+            <Grid container style={{ padding: "2px" }}>
+              <Grid
+                style={{
+                  minHeight: "25px",
+                  maxHeight: "25px",
+                  position: "relative"
+                }}
+                container
+                item
+                xs={12}
+              >
+                <Grid item xs={1} style={{ textAlign: "center" }}>
+                  <i className="fa fa-twitter"></i>
+                </Grid>
+                <Grid item xs={5}>
+                  <Typography
+                    noWrap
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "100%"
+                    }}
+                  >
+                    {searchText}
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid
+                style={{
+                  minHeight: "60px",
+                  maxHeight: "60px",
+                  position: "relative",
+                  backgroundColor: "#ffffff",
+                  paddingLeft: "2px"
+                }}
+                item
+                xs={12}
+                spacing={3}
+              >
+                <img
+                  src={tweets[0].image_url}
+                  style={{ height: "15px", borderRadius: "50%" }}
+                />
+                <Typography
+                  component="span"
+                  style={{
+                    paddingLeft: "5px",
+                    fontWeight: "bold",
+                    fontSize: "100%",
+                    color: "#000000"
+                  }}
+                >
+                  {tweets[0].name}
+                </Typography>
+                <Typography
+                  component="span"
+                  style={{
+                    paddingLeft: "5px",
+                    fontSize: "70%",
+                    color: "#888888"
+                  }}
+                >
+                  {tweets[0].id}
+                </Typography>
+                <Typography
+                  style={{
+                    fontSize: "80%",
+                    color: "#000000",
+                    margin: "4px",
+
+                    width: `${tweets[0].text.length * 2}px`,
+                    paddingLeft: "500px",
+                    whiteSpace: "nowrap",
+                    animationName: "marquee",
+                    animationDuration: `${span / 1000}s`,
+                    animationTimingFunction: "linear",
+                    animationIterationCount: "infinite"
+                  }}
+                >
+                  {tweets[0].text}
+                </Typography>
+              </Grid>
+            </Grid>
+          </div>
+        ) : (
+          ""
+        )}
         <br />
         <br />
         {tweets.length > 0 ? (
